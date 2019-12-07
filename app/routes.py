@@ -7,7 +7,6 @@ def index():
   soul = data.get()
   return render_template('index.html', soul=soul[1])
 
-
 @app.route('/init')
 def init():
   data.init()
@@ -18,4 +17,10 @@ def init():
 def add():
   soul = request.form['soul']
   data.add(soul)
-  return render_template('index.html', soul=soul)
+  return 'success '+soul
+
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
+  id = request.form['id']
+  data.delete(id)
+  return 'success'
