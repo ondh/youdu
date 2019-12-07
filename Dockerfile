@@ -9,6 +9,7 @@ RUN apk add --no-cache git tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone \
     && git clone https://github.com/ondh/youdu.git /python \
     && pip install -r requirements.txt \
+    && python init.py \
     && apk del tzdata git
 
 EXPOSE 5000
