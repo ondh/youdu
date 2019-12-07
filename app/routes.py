@@ -7,11 +7,11 @@ def index():
   soul = data.get()
   return render_template('index.html', soul=soul[1])
 
-@app.route('/init')
-def init():
-  data.init()
-  soul = data.get()
-  return render_template('index.html', soul=soul[1])
+# @app.route('/init')
+# def init():
+#   data.init()
+#   soul = data.get()
+#   return render_template('index.html', soul=soul[1])
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
